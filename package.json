@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jbwashington/king-draco#readme",
   "devDependencies": {
+    "es6-promise": "^4.1.0",
     "gulp": "^3.9.1"
   }
 }
