@@ -1,0 +1,21 @@
+{
+  "name": "wrist-worker",
+  "version": "1.0.0",
+  "description": "wordpress dev environment",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbwashington/king-draco.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "wordpress",
+    "gulp"
+  ],
+  "author": "James Washington",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbwashington/king-draco/issues"
+  },
+  "homepage": "https://github.com/jbwashington/king-draco#readme"
+}
