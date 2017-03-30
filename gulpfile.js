@@ -27,7 +27,6 @@ gulp.task('sass', function() {
   .pipe(sass())
   .pipe(autoprefixer())
   .pipe(gulp.dest('./'))
-
   .pipe(rtlcss())                     // Convert to RTL
   .pipe(rename({ basename: 'style' }))  // Rename to style.css
   .pipe(gulp.dest('./'));             // Output RTL stylesheets (style.css)
