@@ -1,9 +1,11 @@
 require('es6-promise').polyfill();
 
+// VARIABLES
 var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     rtlcss        = require('gulp-rtlcss'),
     autoprefixer  = require('gulp-autoprefixer'),
+    sourcemaps    = require('gulp-sourcemaps'),
     plumber       = require('gulp-plumber'),
     gutil         = require('gulp-util'),
     rename        = require('gulp-rename'),
@@ -20,30 +22,34 @@ var onError = function( err ) {
   this.emit('end');
 };
 
-// Sass
+// SASS
 gulp.task('sass', function() {
   return gulp.src('./sass/**/*.scss')
   .pipe(plumber({ errorHandler: onError }))
   .pipe(sass())
   .pipe(autoprefixer())
+  .pipe(sourcemaps.init())
   .pipe(gulp.dest('./'))
   .pipe(rtlcss())                     // Convert to RTL
   .pipe(rename({ basename: 'style' }))  // Rename to style.css
+  .pipe(sourcemaps.write('./', {includeContent: false, sourceRoot: './'}))
   .pipe(gulp.dest('./'));             // Output RTL stylesheets (style.css)
 });
 
-// JavaScript
+// JAVASCRIPT
 gulp.task('js', function() {
   return gulp.src(['./js/*.js'])
   .pipe(jshint())
   .pipe(jshint.reporter('default'))
   .pipe(concat('app.js'))
+  .pipe(sourcemaps.init())
   .pipe(rename({suffix: '.min'}))
   .pipe(uglify())
+  .pipe(sourcemaps.write('./', {includeContent: true, sourceRoot: './js'}))
   .pipe(gulp.dest('./js'));
 });
 
-// Images
+// IMAGES
 gulp.task('images', function() {
   return gulp.src('./images/src/*')
   .pipe(plumber({ errorHandler: onError }))
@@ -51,7 +57,7 @@ gulp.task('images', function() {
   .pipe(gulp.dest('./images/dist'));
 });
 
-// Watch
+// WATCH
 gulp.task('watch', function() {
   browserSync.init({
     files: ['./**/*.php'],

@@ -33,6 +33,8 @@
   },
   "dependencies": {
     "bootstrap": "beta",
-    "lodash": "^4.17.4"
+    "gulp-sourcemaps": "^2.5.0",
+    "lodash": "^4.17.4",
+    "normalize-scss": "^6.0.0"
   }
 }
