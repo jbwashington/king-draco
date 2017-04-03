@@ -1,0 +1,33 @@
+{
+  "name": "finesse",
+  "version": "0.5.7",
+  "homepage": "https://jameswashington.me/",
+  "authors": [
+    "Holger Koenemann <office@holgerkoenemann.de>"
+  ],
+  "description": "UnderStrap is a Bootstrap and underscores based WordPress theme framework.",
+  "moduleType": "globals",
+  "main": [
+    "sass/theme.scss"
+  ],
+  "keywords": [
+    "bootstrap",
+    "underscores",
+    "wordpress",
+    "_s",
+    "sass"
+  ],
+  "license": "GPL-2.0",
+  "ignore": [
+    "**/.*",
+    "test",
+    "tests",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {},
+  "_source": "https://github.com/holger1411/understrap.git",
+  "_target": "~0.5.7",
+  "_originalSource": "understrap",
+  "private": true
+}

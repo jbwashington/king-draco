@@ -1,0 +1,145 @@
+@import 'theme_variables';
+
+// ----------
+// TYPOGRAPHY
+// ----------
+
+html {
+  font: 100%/1.5;
+  font-size: 18px;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+}
+
+.entry-header {
+  text-align: center;
+  text-transform: uppercase;
+  h2 {
+    font-size: $font-size-h2;
+    font-weight: 700;
+    line-height: $headings-line-height * 1.2;
+    margin: 0 0 0;
+    // padding: 1.8rem 2rem;
+  }
+  h3 {
+    font-size: $font-size-h3;
+    font-weight: 700;
+    line-height: $headings-line-height;
+    margin: 0 0 2.2rem;
+    padding: 0 2rem;
+  }
+}
+
+.entry-meta {
+  color: $body-color;
+  display: block;
+  position: relative;
+  z-index: 1;
+  span {
+    background: $body-bg;
+    padding: 0 .8rem;
+  }
+}
+
+.entry-meta:before {
+  border-top: .08rem solid $body-color;
+  content: "";
+  position: absolute;
+  top: .7rem;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+h6 {
+  font-size: $font-size-h6;
+}
+
+p {
+  line-height: $line-height-base;
+  margin: 0 0 1rem;
+  text-indent: 2rem;
+  font-family: $font-family-serif;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  color: $volt;
+}
+a:focus {
+  border: 1px dotted $volt;
+}
+a:focus:hover {
+  border: 1px dotted $volt;
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+code,
+pre {
+  font-family: $font-family-monospace;
+  font-size: $code-font-size;
+}
+
+blockquote {
+  color: $blockquote-small-color;
+  font-style: italic;
+  text-shadow: $kbd-box-shadow;
+}
+
+blockquote:before {
+  content: "\201C";
+  display: inline-block;
+  padding-right: .4em;
+}
+
+@media print {
+  * { 
+    background: transparent !important;
+    color: $black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+

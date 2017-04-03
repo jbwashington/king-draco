@@ -1,42 +1,20 @@
-/**
- * File customizer.js.
- *
- * Theme Customizer enhancements for a better user experience.
- *
- * Contains handlers to make Theme Customizer preview reload changes asynchronously.
- */
 
+/**
+ * This file adds some LIVE to the Theme Customizer live preview. To leverage
+ * this, set your custom settings to 'postMessage' and then add your handling
+ * here. Your javascript should grab settings from customizer controls, and
+ * then make any necessary changes to the page using jQuery.
+ *
+ * @see https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29
+ */
 ( function( $ ) {
 
-	// Site title and description.
-	wp.customize( 'blogname', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
-		} );
-	} );
-	wp.customize( 'blogdescription', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
-		} );
-	} );
+    // Update the site title in real time...
+    wp.customize( 'blogname', function( value ) {
+        value.bind( function( newval ) {
+            console.log(newval);
+            $( '.navbar-header a' ).html( newval );
+        } );
+    } );
 
-	// Header text color.
-	wp.customize( 'header_textcolor', function( value ) {
-		value.bind( function( to ) {
-			if ( 'blank' === to ) {
-				$( '.site-title a, .site-description' ).css( {
-					'clip': 'rect(1px, 1px, 1px, 1px)',
-					'position': 'absolute'
-				} );
-			} else {
-				$( '.site-title a, .site-description' ).css( {
-					'clip': 'auto',
-					'position': 'relative'
-				} );
-				$( '.site-title a, .site-description' ).css( {
-					'color': to
-				} );
-			}
-		} );
-	} );
 } )( jQuery );

@@ -1,0 +1,43 @@
+@import 'theme_variables';
+
+// NAVIGATION
+
+.navbar {
+
+  span {
+    color: $gray-dark;
+  }
+  svg {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+  li {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+
+a.nav-link {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    color: $gray-dark;
+    text-transform: uppercase;
+}
+
+a.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+}
+
+a.nav-link:hover::after {
+    width: 100%;
+    //transition: width .3s;
+}
