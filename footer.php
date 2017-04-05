@@ -15,31 +15,57 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="wrapper-footer">
 
-	<div class="<?php echo esc_html( $container ); ?>">
+        <div class="<?php echo esc_html( $container ); ?>">
 
-		<div class="row">
+                <div class="row">
 
-			<div class="col-md-12">
+                        <div class="col-md-12">
 
-				<footer class="site-footer" id="colophon">
+                                <footer class="site-footer">
 
-					<div class="site-info">
-						<a href="<?php echo esc_url( __( 'http://wordpress.org/','understrap' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'understrap' ),'WordPress' ); ?></a>
-						<span class="sep"> | </span>
-						<?php printf( // WPCS: XSS ok.
-							esc_html__( 'Theme: %1$s by %2$s.', 'understrap' ), $the_theme->get( 'Name' ),
-						'<a href="http://understrap.com/">understrap.com</a>' ); ?>
-						(<?php printf( // WPCS: XSS ok.
-							esc_html__( 'Version: %1$s', 'understrap' ), $the_theme->get( 'Version' ) ); ?>)
-					</div><!-- .site-info -->
+                                        <div class="site-info">
 
-				</footer><!-- #colophon -->
+                                              <h6 >James Washington 2017.  Property is theft.</h6>
 
-			</div><!--col end -->
+                                        </div><!-- .site-info -->
 
-		</div><!-- row end -->
+                                </footer><!-- #colophon -->
 
-	</div><!-- container end -->
+                        </div><!--col end -->
+
+                </div><!-- row end -->
+
+                <div class="row">
+
+                        <div class="col-md-12">
+
+                                <footer class="site-footer">
+
+                                        <div class="site-info social-icons">
+
+                                              <div class="d-inline-block">
+                                                <div class="bg-circle-outline d-inline-block">
+                                                  <a href="https://www.facebook.com/"><i class="fa fa-2x fa-fw fa-facebook"></i></a>
+                                                </div>
+                                                <div class="bg-circle-outline d-inline-block">
+                                                  <a href="https://twitter.com/">
+                                                    <i class="fa fa-2x fa-fw fa-twitter"></i></a>
+                                                </div>
+                                                <div class="bg-circle-outline d-inline-block">
+                                                  <a href="https://www.linkedin.com/company/">
+                                                    <i class="fa fa-2x fa-fw fa-linkedin"></i></a>
+                                                </div>
+                                              </div>
+
+                                        </div><!-- .site-info -->
+
+                                </footer><!-- #colophon -->
+
+                        </div><!--col end -->
+
+                </div><!-- row end -->
+
+        </div><!-- container end -->
 
 </div><!-- wrapper end -->
 
